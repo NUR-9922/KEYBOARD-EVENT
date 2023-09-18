@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyboard-veents</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url(https://wallpapers.com/images/high/hd-rain-in-the-sea-9y4gtl014id970fm.webp);
+
+        }
+
+        #form {
+            width: 300px;
+            height: 400px;
+            margin: 40px auto;
+            border-radius: 10px;
+            background-color: rgba(135, 207, 235, 0.5);
+            z-index: -1;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px auto;
+            border: 0px solid;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 20px;
+            opacity: -1;
+            transition: all 1s;
+            position: absolute;
+        }
+
+        #form input {
+            text-align: center;
+            width: 190px;
+            height: 40px;
+            outline: none;
+            margin-left: 20px;
+            border-radius: 15px;
+            border: none;
+            font-size: 30px;
+            font-family: arial;
+            font-family: 500;
+
+        }
+
+        h1 {
+            font-family: roboto;
+            font-size: 35px;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        label {
+            font-family: arial;
+            font-size: 20px;
+            margin-left: 20px;
+
+        }
+
+        #btn {
+            width: 120px;
+            height: 40px;
+            text-align: center;
+            display: block;
+            margin: 300px auto;
+            background-color: skyblue;
+            border: 0px;
+            border-radius: 10px;
+            position: relative;
+            transform: scale(1);
+            font-size: larger;
+            font-family: roboto;
+            font-weight: 700;
+            transition: all .3s;
+
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        @media screen and (max-width: 1024px) {
+            body {
+                background-size: 400%;
+            }
+          
+       
+            #btn{
+                width: 220px;
+            height: 80px;
+            font-size: 50px;
+            }
+            #form {
+                left: 30%;
+                bottom: 90%;
+                transform: scale(1.5);
+        
+            }
+
+        } 
+
+
+        @media screen and (max-width: 600px) {
+            body {
+                background-size:400%;
+      
+        }
+        #form {
+        
+            width: 300px;
+            height: 400px;
+            left: 3%;
+            bottom: 100%;
+            transform: scale(.96);
+            }
+    }
+
+
+    </style>
+    <button id="btn" onclick="btnFun()"><a href="">Clic</a>k</button>
+    <form action="" id="form">
+        <h1>Keyboard Events</h1>
+        <label for="lname">Keydown</label><br><br>
+        <input type="text" id="Keydown" name="fname" value="" onkeydown="Event1()"><br>
+        <br><label for="lname">Keypress</label><br><br>
+        <br> <input type="text" id="Keypress" name="lname" value="" onkeypress="Event2()"><br><br>
+        <label for="lname">Keyup</label><br><br>
+        <input type="text" id="Keyup" name="lname" value="" onkeyup="Event3()"><br><br>
+    </form>
+
+
+    <script>
+
+        function btnFun() {
+            document.getElementById("form").style.opacity = 1;
+            document.getElementById("form").style.margin = "-562px auto";
+            document.getElementById("btn").style.transform = "scale(.0)";
+        }
+        function Event1() {
+            let Keydown = document.getElementById("Keydown").value;
+            document.getElementById("form").style.background = Keydown;
+        }
+        function Event2() {
+            let Keypress = document.getElementById("Keypress").value;
+            document.getElementById("form").style.background = Keypress;
+        }
+        function Event3() {
+            let Keyup = document.getElementById("Keyup").value;
+            document.getElementById("form").style.background = Keyup;
+        }
+
+
+    </script>
+</body>
+
+</html>
